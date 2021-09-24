@@ -2,10 +2,8 @@ name: Build and deploy
 
 on:
   push:
-    branches: [ main ]
-    
-  # Run workflow manually
-  workflow_dispatch:
+    branches: 
+     - main
 
 jobs:
   deploy:
@@ -13,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@main
+        uses: actions/checkout@v2
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
